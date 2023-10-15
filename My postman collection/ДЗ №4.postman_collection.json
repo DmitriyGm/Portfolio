@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "a794acc4-6b8b-4f70-b7a5-5232cdfdcd06",
+		"name": "ДЗ №4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27990955"
+	},
+	"item": [
+		{
+			"name": "Приёмочный тест-кейс",
+			"item": [
+				{
+					"name": "Получение списка задач",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://todo-app-sky.herokuapp.com/",
+							"protocol": "https",
+							"host": [
+								"todo-app-sky",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление задачи",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 84115,\r\n    \"title\": \"Домашняя работа\",\r\n    \"completed\": false,\r\n    \"order\": null,\r\n    \"url\": \"84115\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://todo-app-sky.herokuapp.com/",
+							"protocol": "https",
+							"host": [
+								"todo-app-sky",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Проверка, что задача добавлена в список",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://todo-app-sky.herokuapp.com/",
+							"protocol": "https",
+							"host": [
+								"todo-app-sky",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Проставление отметки, что задача выполнена",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 84115,\r\n    \"title\": \"Домашняя работа\",\r\n    \"completed\": true,\r\n    \"order\": null,\r\n    \"url\": \"/84115\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://todo-app-sky.herokuapp.com/84115",
+							"protocol": "https",
+							"host": [
+								"todo-app-sky",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"84115"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение списка задач с отметкой о выполнении",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://todo-app-sky.herokuapp.com/",
+							"protocol": "https",
+							"host": [
+								"todo-app-sky",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление задачи",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 84115,\r\n    \"title\": \"Домашняя работа\",\r\n    \"completed\": true,\r\n    \"order\": null,\r\n    \"url\": \"/84115\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://todo-app-sky.herokuapp.com/84115",
+							"protocol": "https",
+							"host": [
+								"todo-app-sky",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"84115"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение списка с отсутствующей задачей",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://todo-app-sky.herokuapp.com/",
+							"protocol": "https",
+							"host": [
+								"todo-app-sky",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Работа с Mockoon",
+			"item": [
+				{
+					"name": "Просмотр списка задач",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6666",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6666"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение списка задач с правилом",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "result",
+								"value": "empty list",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:6666/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление новой задачи",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Ошибка\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6666/?result=empty list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "result",
+									"value": "empty list"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

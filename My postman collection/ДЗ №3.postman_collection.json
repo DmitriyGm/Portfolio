@@ -1,0 +1,532 @@
+{
+	"info": {
+		"_postman_id": "5dc9f5ae-8987-433f-bb5f-2d3dd5884640",
+		"name": "ДЗ №3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27990955"
+	},
+	"item": [
+		{
+			"name": "Получение списка тортов",
+			"item": [
+				{
+					"name": "Получение списка тортов",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cakes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cakes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Добавление торта",
+			"item": [
+				{
+					"name": "Получение списка тортов",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cakes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cakes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление торта",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Access-Control-Allow-Credentials",
+								"value": "true"
+							},
+							{
+								"key": "Access-Control-Allow-Headers",
+								"value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Origin",
+								"value": "https://buy-cakes.herokuapp.com"
+							},
+							{
+								"key": "Referer",
+								"value": "https://buy-cakes.herokuapp.com/admin/addCake"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-origin"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"114\", \"Google Chrome\";v=\"114\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Тест505\",\"photoFileName\":\"cevxnqyvqn4xg8ddlupy\",\"description\":\"Тест\",\"forWhoId\":0,\"occasionId\":0}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cakes/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cakes",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Проверка, что торт добавлен",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cakes/92888",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cakes",
+								"92888"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Удаление торта",
+			"item": [
+				{
+					"name": "Получение списка тортов",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cakes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cakes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление торта",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Access-Control-Allow-Credentials",
+								"value": "true"
+							},
+							{
+								"key": "Access-Control-Allow-Headers",
+								"value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Origin",
+								"value": "https://buy-cakes.herokuapp.com"
+							},
+							{
+								"key": "Referer",
+								"value": "https://buy-cakes.herokuapp.com/admin/addCake"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-origin"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"114\", \"Google Chrome\";v=\"114\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Тест505\",\"photoFileName\":\"cevxnqyvqn4xg8ddlupy\",\"description\":\"Тест\",\"forWhoId\":0,\"occasionId\":0}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cakes/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cakes",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Проверка что торт добавлен",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cakes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cakes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление торта",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Access-Control-Allow-Credentials",
+								"value": "true"
+							},
+							{
+								"key": "Access-Control-Allow-Headers",
+								"value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Origin",
+								"value": "https://buy-cakes.herokuapp.com"
+							},
+							{
+								"key": "Referer",
+								"value": "https://buy-cakes.herokuapp.com/admin"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-origin"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"114\", \"Google Chrome\";v=\"114\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/cakes/92889",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cakes",
+								"92889"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Проверка, что торт удалён из списка",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+							},
+							{
+								"key": "Access-Control-Allow-Credentials",
+								"value": "true"
+							},
+							{
+								"key": "Access-Control-Allow-Headers",
+								"value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "\"2aa6-nmnPt167uHtFzfGp5NGey4/dhxs\""
+							},
+							{
+								"key": "Referer",
+								"value": "https://buy-cakes.herokuapp.com/admin"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-origin"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"114\", \"Google Chrome\";v=\"114\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/cakes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cakes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "{{baseUrl}}",
+			"value": "https://buy-cakes.herokuapp.com/api",
+			"type": "string"
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://buy-cakes.herokuapp.com/api"
+		}
+	]
+}

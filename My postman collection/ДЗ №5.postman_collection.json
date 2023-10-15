@@ -1,0 +1,598 @@
+{
+	"info": {
+		"_postman_id": "d56d6ce3-c12e-4538-8e4c-a87069fda15c",
+		"name": "ДЗ №5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27990955"
+	},
+	"item": [
+		{
+			"name": "Создание доски",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"idBoard\"\r",
+							"var value = pm.response.json().id\r",
+							"pm.collectionVariables.set(key, value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{mytoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{$randomMonth}}\",\r\n    \"token\": \"{{mytoken}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/1/boards/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка досок",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{mytoken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/1/boards/{{idBoard}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						"{{idBoard}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление доски",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{mytoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseURL}}/1/boards/{{idBoard}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						"{{idBoard}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание списка",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"idList\"\r",
+							"var value = pm.response.json().id\r",
+							"pm.collectionVariables.set(key, value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{mytoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{$randomAdjective}}\",\r\n    \"token\": \"{{mytoken}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/1/boards/{{idBoard}}/lists",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						"{{idBoard}}",
+						"lists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание списка (2)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"idList2\"\r",
+							"var value = pm.response.json().id\r",
+							"pm.collectionVariables.set(key, value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{mytoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{$randomAdjective}}\",\r\n    \"token\": \"{{mytoken}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/1/boards/{{idBoard}}/lists",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						"{{idBoard}}",
+						"lists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{mytoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{$randomAdjective}}\",\r\n    \"idboard\": \"64a8486de434c270d932893e\",\r\n    \"token\": \"{{mytoken}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/1/list/{{idList}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"1",
+						"list",
+						"{{idList}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание карточки",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"idCard\"\r",
+							"var value = pm.response.json().id\r",
+							"pm.collectionVariables.set(key, value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{mytoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{$randomAdjective}}\",\r\n    \"idList\": \"{{idList}}\",\r\n    \"token\": \"{{mytoken}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/1//cards",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"1",
+						"",
+						"cards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление карточки",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{mytoken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/1//cards/{{idCard}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"1",
+						"",
+						"cards",
+						"{{idCard}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменение названия карточки",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"idCard\"\r",
+							"var value = pm.response.json().id\r",
+							"pm.collectionVariables.set(key, value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{mytoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{$randomAdjective}}\",\r\n    \"idList\": \"{{idList}}\",\r\n    \"token\": \"{{mytoken}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/1//cards/{{idCard}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"1",
+						"",
+						"cards",
+						"{{idCard}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменение названия карточки (2)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"idCard\"\r",
+							"var value = pm.response.json().id\r",
+							"pm.collectionVariables.set(key, value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{mytoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{$randomAdjective}}\",\r\n    \"idList\": \"{{idList2}}\",\r\n    \"token\": \"{{mytoken}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/1//cards/{{idCard}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"1",
+						"",
+						"cards",
+						"{{idCard}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение информации о карточке",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"idCard\"\r",
+							"var value = pm.response.json().id\r",
+							"pm.collectionVariables.set(key, value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{mytoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{$randomAdjective}}\",\r\n    \"idList\": \"{{idList}}\",\r\n    \"token\": \"{{mytoken}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/1//cards/{{idCard}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"1",
+						"",
+						"cards",
+						"{{idCard}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление комментария",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"idComm\"\r",
+							"var value = pm.response.json().id\r",
+							"pm.collectionVariables.set(key, value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{mytoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"{{mytoken}}\",\r\n    \"text\": \"{{$randomCatchPhrase}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/1/card/{{idCard}}/actions/comments",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"1",
+						"card",
+						"{{idCard}}",
+						"actions",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "mytoken",
+			"value": "64a832686c2b4daae3e63ab0%2FATTSi3Dud9ppkTBkjPV3Se1jPKyziKhPWqMdi0LrwWdDKxIdKMbZLUlD6DE2qNgXHPfBFA5882C7",
+			"type": "string"
+		},
+		{
+			"key": "baseURL",
+			"value": "https://trello.com/",
+			"type": "string"
+		},
+		{
+			"key": "idBoard",
+			"value": ""
+		},
+		{
+			"key": "idList",
+			"value": ""
+		},
+		{
+			"key": "idCard",
+			"value": ""
+		},
+		{
+			"key": "idComm",
+			"value": ""
+		},
+		{
+			"key": "idList2",
+			"value": ""
+		}
+	]
+}

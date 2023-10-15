@@ -1,0 +1,409 @@
+{
+	"info": {
+		"_postman_id": "ec43dd2e-17d7-421e-83a5-9f4af63435dd",
+		"name": "Курсоввая работа",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27990955"
+	},
+	"item": [
+		{
+			"name": "Получение всех активностей в расписании",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"from\": \"2023-07-29T23:00:00+02:00\",\r\n  \"till\": \"2023-07-30T23:00:00+02:00\",\r\n  \"onlyTypes\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BUrl}}events",
+					"host": [
+						"{{BUrl}}events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание персонального события",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"Id\"\r",
+							"var value = pm.response.json().data.payload.id\r",
+							"pm.collectionVariables.set(key, value)\r",
+							"\r",
+							"var key = \"StartAt\"\r",
+							"var value = pm.response.json().data.startAt\r",
+							"pm.collectionVariables.set(key, value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"startAt\": \"2023-08-01T12:30:00+03:00\",\r\n  \"endAt\": \"2023-08-01T13:00:00+03:00\",\r\n  \"title\": \"Задача из постмана\",\r\n  \"description\": \"Курсовая321\",\r\n  \"color\": \"#43B658\",\r\n  \"backgroundColor\": \"#EBFDF2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BUrl}}createPersonal",
+					"host": [
+						"{{BUrl}}createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание персонального события в будущем времени",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"startAt\": \"2023-08-30T12:30:00+03:00\",\r\n  \"endAt\": \"2023-08-30T13:00:00+03:00\",\r\n  \"title\": \"Задача из постмана\",\r\n  \"description\": \"Курсовая\",\r\n  \"color\": \"#43B658\",\r\n  \"backgroundColor\": \"#EBFDF2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BUrl}}createPersonal",
+					"host": [
+						"{{BUrl}}createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание персонального события в прошедшем времени",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"startAt\": \"2023-06-30T12:30:00+03:00\",\r\n  \"endAt\": \"2023-06-30T13:00:00+03:00\",\r\n  \"title\": \"Задача из постмана\",\r\n  \"description\": \"Курсовая\",\r\n  \"color\": \"#43B658\",\r\n  \"backgroundColor\": \"#EBFDF2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BUrl}}createPersonal",
+					"host": [
+						"{{BUrl}}createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание персонального события с некорректной датой",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"startAt\": \"2023-07-35T12:30:00+03:00\",\r\n  \"endAt\": \"2023-07-35T13:00:00+03:00\",\r\n  \"title\": \"Задача из постмана1\",\r\n  \"description\": \"Курсовая\",\r\n  \"color\": \"#43B658\",\r\n  \"backgroundColor\": \"#EBFDF2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BUrl}}createPersonal",
+					"host": [
+						"{{BUrl}}createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание персонального события без даты",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"startAt\": \"T12:30:00+03:00\",\r\n  \"endAt\": \"T13:00:00+03:00\",\r\n  \"title\": \"Задача из постмана1\",\r\n  \"description\": \"Курсовая\",\r\n  \"color\": \"#43B658\",\r\n  \"backgroundColor\": \"#EBFDF2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BUrl}}createPersonal",
+					"host": [
+						"{{BUrl}}createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание персонального события без названия",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"startAt\": \"2023-08-01T12:30:00+03:00\",\r\n  \"endAt\": \"2023-08-01T13:00:00+03:00\",\r\n  \"title\": \"\",\r\n  \"description\": \"Курсовая\",\r\n  \"color\": \"#43B658\",\r\n  \"backgroundColor\": \"#EBFDF2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BUrl}}createPersonal",
+					"host": [
+						"{{BUrl}}createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание персонального события без цвета",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"startAt\": \"2023-08-01T12:30:00+03:00\",\r\n  \"endAt\": \"2023-08-01T13:00:00+03:00\",\r\n  \"title\": \"Делаю курсач\",\r\n  \"description\": \"Курсовая\",\r\n  \"color\": \"\",\r\n  \"backgroundColor\": \"#EBFDF2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BUrl}}createPersonal",
+					"host": [
+						"{{BUrl}}createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Редактирование события",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"Id\"\r",
+							"var value = pm.response.json().data.payload.id\r",
+							"pm.collectionVariables.set(key, value)\r",
+							"\r",
+							"var key = \"StartAt\"\r",
+							"var value = pm.response.json().data.startAt\r",
+							"pm.collectionVariables.set(key, value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"startAt\": \"2023-08-01T14:00:00+03:00\",\r\n    \"endAt\": \"2023-08-01T14:30:00+03:00\",\r\n    \"title\": \"Задача из постмана\",\r\n    \"description\": \"Курсовая321\",\r\n    \"color\": \"#43B658\",\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"id\": {{Id}},\r\n    \"oldStartAt\": \"2023-08-01T12:30:00+03:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BUrl}}updatePersonal",
+					"host": [
+						"{{BUrl}}updatePersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление события",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{Id}},\r\n    \"startAt\": \"{{StartAt}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BUrl}}removePersonal",
+					"host": [
+						"{{BUrl}}removePersonal"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BUrl",
+			"value": "https://api-teachers.skyeng.ru/v2/schedule/",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjE0NTk2OTMzLCJpZGVudGl0eSI6InRlc3QudHN0MzE3QHNreWVuZy5ydSIsImlkZW50aXR5TG9naW4iOm51bGwsImlkZW50aXR5RW1haWwiOiJ0ZXN0LnRzdDMxN0Bza3llbmcucnUiLCJpZGVudGl0eVBob25lIjpudWxsLCJuYW1lIjoiXHUwNDEwXHUwNDQxXHUwNDQyXHUwNDQ1XHUwNDM4XHUwNDNhIiwic3VybmFtZSI6Ilx1MDQxMFx1MDQzY1x1MDQzOFx1MDQ0MFx1MDQ0Zlx1MDQzZCIsImVtYWlsIjoidGVzdC50c3QzMTdAc2t5ZW5nLnJ1IiwidWlMYW5ndWFnZSI6InJ1IiwibG9jYWxlIjoicnUiLCJzZXJ2aWNlTG9jYWxlIjpudWxsLCJ1YXMiOjMwLCJqd3RUeXBlIjoxLCJqdGkiOiJ2SnRHOERuRzR0SDAybmR2TUdNczlDTnBrRmZQWFhUTSIsImJyYW5kIjpudWxsLCJleHAiOjE2OTExNjc1OTcsImF2YXRhclVybCI6Imh0dHBzOlwvXC9hdXRoLWF2YXRhcnMtc2t5ZW5nLmltZ2l4Lm5ldFwvMTQ1OTY5MzNcLzk4ZjZiZWI1LWYwN2ItNDFlYi04YmMyLTQ1NzE0MGE3NDg4Mz9hdXRvPWZvcm1hdCUyQ2VuaGFuY2UmZml0PWNyb3AmaD0yMDAmaXhsaWI9cGhwLTIuMS4xJnE9NzUmc2F0PTgmc2hhcnA9MTAmdmliPTgmdz0yMDAiLCJhSXNTdHJvbmciOnRydWUsImFUeXBlIjoiVVNFUk5BTUVfUEFTU1dPUkQiLCJhVGltZSI6MTY5MTA4MTE5Niwicm9sZXMiOlsiUk9MRV9URUFDSEVSX0NBTkRJREFURSIsIlJPTEVfVEVBQ0hFUl9DQU5ESURBVEVfQkFTRV9BQ0NFU1MiLCJST0xFX1RUQ19VU0FHRSIsIlJPTEVfVklNQk9YX1RFQUNIRVJfVVNBR0UiLCJST0xFX1RFQUNIRVIiLCJST0xFX0NSTTJfVEVBQ0hFUl9BQ0NFU1MiLCJST0xFX01BVEhfVEVBQ0hFUiIsIlJPTEVfTUFUSF9DT05URU5UX1RIRU1FX1ZJRVciXX0.Kl28kRXs7kJ3EMnw_wbv-nSGYDjk49ljx1ukE1xsPsw--XC6WK8DMI499VAoMj2-COaoXdXjj6ky1A6Vet0WMUWsVXUSVI8soI9vXggHNom-Q49SgZh4tVBcfXAh0pxFErGeCrPU_p2LDc_m68NArzzTIoW-deR3_ALhJ3HwAkV4RrHp8hwyETb1m-tgua9B4iRkU-ybeTt4oQRjw_lAL5BHB6BR3jT67NB5Fuc05NhssWsTioY14QyuWoylgTX_2x8kumLuz9RL0Korzi0FQSIEV3VU-psiS37XsuhI0P9-BhffaUbCB3m2WR8tNYuJjBcaUzHdl_fJaqmYz9k10CtruisaTMRbuAIBUyMeQfylteyphNwtxzeJa0ewNbt1dOzZ_M7RZGRA7RZ_XuavFkgR4yp40vkFSblBMMJ3r0KcVqpI0uanz3te7_6oDX3BWysn8XMhjZox6JxdExhipjKKPytgAkC-Vy_a8t6G2084FyZfUTaQFvyYnrDCrIDPl_SBp7LNZuZcmqZC1XFXll-V2Wxu1lU06aAktZRTFxSM0P3j12JNJDYieOguW8yduLRAtQrhWljCejECrVua6QviFD-Z7wR1_vZPjPd6WeWb6r_bDoPA-8s2weMzWEMDZ5rklF836kIyA2HaGi9PuCyMAIUeQeIeEhDEmWnN9WQ",
+			"type": "string"
+		},
+		{
+			"key": "Id",
+			"value": ""
+		},
+		{
+			"key": "StartAt",
+			"value": ""
+		}
+	]
+}
