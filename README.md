@@ -6,4 +6,4 @@
 Trello, SoapUI, Chrome DevTools***
 ## Работы созданные в ходе обучения
 1. Моя коллекция Postman работ https://github.com/DmitriyGm/Portfolio/tree/main/My%20postman%20collection
-2. 
+2. Примеры моих SQL запросов https://github.com/DmitriyGm/Portfolio/tree/main/My%20SQL%20request
