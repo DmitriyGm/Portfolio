@@ -5,4 +5,4 @@
 ***Jira, Qase.io, SQL, Postman, Swagger,
 Trello, SoapUI, Chrome DevTools***
 ## Работы созданные в ходе обучения
-1. [https://github.com/DmitriyGm/Portfolio/tree/main/My%20postman%20collection] Моя коллекция Postman работ 
+1. [https://github.com/DmitriyGm/Portfolio/tree/main/My%20postman%20collection] ("Моя коллекция Postman работ") 
