@@ -5,6 +5,6 @@
 ***Jira, Qase.io, SQL, Postman, Swagger,
 Trello, SoapUI, Chrome DevTools***
 ## Работы созданные в ходе обучения
-1. Моя работа на проверку знаний по основам тестирования https://github.com/DmitriyGm/Portfolio/tree/main/Testing%20Basics
+1. Моя работа на проверку знаний по основам тестирования https://github.com/DmitriyGm/Portfolio/blob/main/Testing%20Basics/Read%20me
 2. Моя коллекция Postman работ https://github.com/DmitriyGm/Portfolio/tree/main/My%20postman%20collection
 3. Примеры моих SQL запросов https://github.com/DmitriyGm/Portfolio/tree/main/My%20SQL%20request
